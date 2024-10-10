@@ -23,3 +23,5 @@ We would add a couple of additional services for monitoring of our apps. I consi
 ## Services to consider
 
 * `Hashicorp vault`
+
+# Next steps
