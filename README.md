@@ -24,4 +24,15 @@ We would add a couple of additional services for monitoring of our apps. I consi
 
 * `Hashicorp vault`
 
-# Next steps
+## Implementation plan
+
+1. Create a `Mermaid` high-level sequence diagram on the way the business-level services should communicate with each other
+2. Create a `Mermaid` diagram of business and monitoring services 
+3. Analyze the creation of those three business logic services and decompose the tasks into GH issues (it would be nice to set up issues templates first)
+    a. Analyze java telegram sdk - kotlin operability
+4. Analyze the cloud or vps renting options and costs and set up a gh issue on the way the app should be hosted and deployed
+5. Analyze k8s set up options and usage
+6. Analyse monitoring services to be involved into the final project look and set up GH issues
+7. Implement it :)))
+
+p.s. the plan is fucked up a bit, there r definitely million of thing missing, but just going through each step might already lead to smth good :)
