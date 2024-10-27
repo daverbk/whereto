@@ -26,6 +26,52 @@ sequenceDiagram
     ActivityService-->>TelegramService: Response with structured list of places to visit 
     TelegramService-->>TelegramAPI: Request for a message delivery
 ```
+### High Level View
+
+```mermaid
+graph TD
+  subgraph k8s-cluster ["Kubernetes Cluster"]
+    
+    subgraph elk-namespace ["elk namespace"]
+      elastic-search
+      logstash
+      kibana
+    end
+
+    subgraph monitoring-namespace ["monitoring namespace"]
+      grafana
+      prometheus
+    end
+    
+    subgraph where-to-namespace ["where-to namespace"]
+      telegram-service
+      activity-service
+      google-maps-service
+    end
+
+  end
+
+  telegram-api
+  google-api
+
+  grafana --> prometheus
+  
+  kibana --> logstash
+  logstash --> elastic-search
+
+  telegram-service --> telegram-api
+  telegram-service --> activity-service
+  activity-service --> google-maps-service
+  google-maps-service --> google-api
+  
+  prometheus --> telegram-service 
+  prometheus --> activity-service
+  prometheus --> google-maps-service
+
+  telegram-service --> logstash
+  activity-service --> logstash
+  google-maps-service --> logstash
+```
 
 ## Notes on app's architecture
 
@@ -42,8 +88,9 @@ We would add a couple of additional services for monitoring of our apps. I consi
 ## Implementation plan
 
 * [X] Create a `Mermaid` high-level sequence diagram on the way the business-level services should communicate with each other
-* [ ] Create a `Mermaid` diagram of business and monitoring services 
-* [ ] Analyze the creation of those three business logic services and decompose the tasks into GH issues (it would be nice to set up issues templates first)
+* [X] Create a `Mermaid` diagram of business and monitoring services 
+* [ ] Analyze the creation of the three business logic services and decompose the tasks into GH issues
+    * [ ] Set up GH issues templates
     * [ ] Analyze java telegram sdk - kotlin operability
 * [ ] Analyze the cloud or vps renting options and costs and set up a gh issue on the way the app should be hosted and deployed
 * [ ] Analyze k8s set up options and usage
