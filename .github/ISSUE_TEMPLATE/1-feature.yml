@@ -1,0 +1,31 @@
+name: Feature Request
+description: Request a new feature or enhancement
+title: "[Feature Request]: "
+labels: ["enhancement"]
+assignees:
+  - daverbk
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to submit a feature request!
+  - type: textarea
+    id: description
+    attributes:
+      label: Feature Description
+      description: Please describe the feature or enhancement you'd like to see added.
+      placeholder: Describe the feature here...
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this feature to you?
+      options:
+        - Low
+        - Medium
+        - High
+      default: 1
+    validations:
+      required: true
