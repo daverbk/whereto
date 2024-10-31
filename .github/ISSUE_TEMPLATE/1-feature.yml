@@ -8,8 +8,8 @@ body:
   - type: markdown
     attributes:
       value: |
-        Hey! Please fill in the description of the feature and the required work needed to be done. Don't forget about the DoR 😌
-  - type: textarea
+        Hey! Please fill in the description of the feature and the required work to be done. Don't forget about DoR. 😌
+  - type: input
     id: description
     attributes:
       label: Feature Description
@@ -22,7 +22,15 @@ body:
     attributes:
       label: Implementation Steps
       description: Please describe what must be done and how. It better be a numbered list of actions.
-      placeholder: 1. Dooo something with it...
+      placeholder: 1. Dooo something...
+    validations:
+      required: true
+  - type: textarea
+    id: dor
+    attributes:
+      label: Definition of Ready
+      description: What is the state of the feature when it's to be marked done
+      placeholder: It's done when it's done :))
     validations:
       required: true
   - type: dropdown
