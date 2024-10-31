@@ -1,27 +1,43 @@
-name: Feature Request
-description: Request a new feature or enhancement
-title: "[Feature Request]: "
-labels: ["enhancement"]
+name: Feature Issue
+description: Lay out a feature
+title: "[FEATURE]: "
+labels: ["feature"]
 assignees:
   - daverbk
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for taking the time to submit a feature request!
-  - type: textarea
+        Hey! Please fill in the description of the feature and the required work to be done. Don't forget about DoR. 😌
+  - type: input
     id: description
     attributes:
       label: Feature Description
-      description: Please describe the feature or enhancement you'd like to see added.
+      description: Please describe the feature or enhancement.
       placeholder: Describe the feature here...
+    validations:
+      required: true
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Implementation Steps
+      description: Please describe what must be done and how. It better be a numbered list of actions.
+      placeholder: 1. Dooo something...
+    validations:
+      required: true
+  - type: textarea
+    id: dor
+    attributes:
+      label: Definition of Ready
+      description: What is the state of the feature when it's to be marked done
+      placeholder: It's done when it's done :))
     validations:
       required: true
   - type: dropdown
     id: priority
     attributes:
       label: Priority
-      description: How important is this feature to you?
+      description: How important is this feature?
       options:
         - Low
         - Medium
