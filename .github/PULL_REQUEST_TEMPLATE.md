@@ -2,11 +2,11 @@
 
 ## Description
 
-<!-- Please include a brief description of the changes introduced by this pull request. -->
+Please include a brief description of the changes introduced by this pull request.
 
 ## Related Issue
 
-<!-- If this pull request addresses a specific issue, please reference it here using GitHub's syntax (e.g., #123). -->
+If this pull request addresses a specific issue, please reference it here using GitHub's syntax (e.g., #123).
 
 ## Checklist
 
@@ -24,5 +24,4 @@ Please review and check all applicable items:
 
 ## Additional Notes and Info
 
-<!-- Include any additional information or context that might be helpful for reviewers. -->
-
+Include any additional information or context that might be helpful for reviewers.
